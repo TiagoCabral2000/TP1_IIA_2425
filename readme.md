@@ -23,6 +23,10 @@ DEPOSITO DO LIXO:
 
 
 ## AGENTES
+### User Interface
+- Nº de agentes definido pelo utilizador ✅
+- Energia inicial dos agentes definida pelo utilizador ✅
+- Capacidade de carga máxima de lixo dos agentes definida pelo utilizador ✅
 
 
 

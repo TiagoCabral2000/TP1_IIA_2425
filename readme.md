@@ -31,12 +31,12 @@ DEPOSITO DO LIXO:
 - Número de ticks para carregar o agente ❌
 
 ### Funcionalidades
-- Agente pode recolher lixo APENAS quando passa em cima dele -> quantidade de elementos de lixo que transporta é incrementada. SE quantidade de lixo que transporta for = à capacidade maxima de transportar lixo, deixa de o poder apanhar. Ao apanhar, mudar a cor da patch de vermelho para preto
-- Se houver vários elementos de lixo na vizinhança do agente, este transporta um ao acaso
-- Quando agente atingir a capacidade máxima de transporte de lixo, procura depósito do lixo. Quando chega ao depósito, deposita a totalidade do lixo. A operação de despejo de lixo deverá demorar um determinado número de iterações, ou ticks (configurável pelo utilizador)
-- Por cada célula que o agente se move perde 1 de energia
-- Quando a energia do agente atingir o valor mínimo de energia definida pelo utilizador, o agente muda de cor e procura carregador, ignorando o lixo. Memoriza a localização do carregador para lá voltar. Demora um determinado número de iterações, ou ticks (configurável pelo utilizador), para carregar totalmente
-- Quando dois agentes se encontram na vizinhança podem trocar informação da posição do carregador, caso a tenha
-- Se a energia do agente chegar a 0, este morre e pinta a patch de branco
+- Agente pode recolher lixo APENAS quando passa em cima dele -> quantidade de elementos de lixo que transporta é incrementada. SE quantidade de lixo que transporta for = à capacidade maxima de transportar lixo, deixa de o poder apanhar. Ao apanhar, mudar a cor da patch de vermelho para preto ❌
+- Se houver vários elementos de lixo na vizinhança do agente, este transporta um ao acaso ❌
+- Quando agente atingir a capacidade máxima de transporte de lixo, procura depósito do lixo. Quando chega ao depósito, deposita a totalidade do lixo. A operação de despejo de lixo deverá demorar um determinado número de iterações, ou ticks (configurável pelo utilizador) ❌
+- Por cada célula que o agente se move perde 1 de energia ❌
+- Quando a energia do agente atingir o valor mínimo de energia definida pelo utilizador, o agente muda de cor e procura carregador, ignorando o lixo. Memoriza a localização do carregador para lá voltar. Demora um determinado número de iterações, ou ticks (configurável pelo utilizador), para carregar totalmente ❌
+- Quando dois agentes se encontram na vizinhança podem trocar informação da posição do carregador, caso a tenha ❌
+- Se a energia do agente chegar a 0, este morre e pinta a patch de branco ❌
 
 

@@ -6,18 +6,18 @@ Garantir a limpeza completa do ambiente (deixarem de existir representações de
 </br>
 
 ## AMBIENTE
-LIXO: 
+### LIXO 
 - Definido por células vermelhas. A % de lixo no ambiente é definida pelo utilizador ✅
 - Quando o lixo é recolhido pelo aspirador, a patch muda de cor preta para vermelha ✅
 
-CARREGADORES:
+### CARREGADORES
 - Definidos por células azuis. Nº de aspiradores definido pelo utilizador (entre 0 e 5) ✅
 
-OBSTACULOS:
+### OBSTACULOS
 - Definidos por células brancas. Nº de obstáculos definido pelo utilizador (entre 0 e 100) ✅
 - Obstáculos devem ser sempre contornados pelos agentes aspirador (_Ficha2 - Parte 2 - passo h_) ✅
 
-DEPOSITO DO LIXO:
+### DEPOSITO DO LIXO
 - Zona de 4 celulas verdes ✅
 - Quando os agentes aspirador tiverem capacidade maxima cheia, devem descarregar la o lixo ❌
 

@@ -3,6 +3,8 @@
 ## OBJETIVO DO TRABALHO
 Garantir a limpeza completa do ambiente (deixarem de existir representações de lixo no espaço), no menor tempo possível.
 
+</br>
+
 ## AMBIENTE
 LIXO: 
 - Definido por células vermelhas. A % de lixo no ambiente é definida pelo utilizador ✅
@@ -19,8 +21,7 @@ DEPOSITO DO LIXO:
 - Zona de 4 celulas verdes ✅
 - Quando os agentes aspirador tiverem capacidade maxima cheia, devem descarregar la o lixo ❌
 
-
-
+</br>
 
 ## AGENTES
 ### User Interface

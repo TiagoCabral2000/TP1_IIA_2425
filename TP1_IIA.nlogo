@@ -1,7 +1,7 @@
 breed[aspiradores aspirador]
 
 globals [depositoLixo]
-turtles-own[energia lixoTransportado]
+turtles-own[energia lixoTransportado ticksEspera]
 
 to setup
   reset-ticks
@@ -71,7 +71,7 @@ end
 to go
   Moveaspiradores
   if count turtles = 0
-   [stop]
+    [stop]
   tick
 end
 
@@ -79,41 +79,59 @@ end
 ;Se a celula a sua frente for branca, contornar
 ;Se for vermelho, recolher lixo (pintar patch de preto e incrementar lixo transportado
 to Moveaspiradores
-   ask aspiradores [
-
-    if (xcor >= max-pxcor or xcor <= min-pxcor or ycor >= max-pycor or ycor <= min-pycor) [
-      set heading heading + 180 + random 90 - random 90  ; Muda a direção de 180 graus com variação de até 90 graus
-      ;Sem a variacao dos 90 graus havia bastantes casos em que os apiradores ficavam "presos" nas paredes, isto é, batiam na parede -> voltavam para tras -> voltavam a ir na direcao da parede
-
-      ; Corrigir a posição para evitar que o agente saia do mundo
-      if xcor >= max-pxcor [ set xcor max-pxcor - 0.5 ]
-      if xcor <= min-pxcor [ set xcor min-pxcor + 0.5 ]
-      if ycor >= max-pycor [ set ycor max-pycor - 0.5 ]
-      if ycor <= min-pycor [ set ycor min-pycor + 0.5 ]
+  ask aspiradores [
+    ifelse ticksEspera > 0 [
+      ; Se está em espera, decrementa o contador e não faz nada
+      set ticksEspera ticksEspera - 1
     ]
-
-
-    let lixoProximo one-of neighbors4 with [pcolor = red] ; Verificar se existe lixo nas células vizinhas (percepção neighbors4)
-    ifelse lixoProximo != nobody ;Detetou lixo na vizinhança
-    [
-      if lixoTransportado < capTransporte [
-        move-to lixoProximo
-        set pcolor black
-        set lixoTransportado lixoTransportado + 1
-      ]
-    ]
-    [ ;Se nao houver lixo, avancar
-      ifelse [pcolor] of patch-ahead 1 = white
+    [ ; Avança normalmente
+      ifelse lixoTransportado < capTransporte
       [
-        right 90  ; Desvia do obstáculo
+        let lixoProximo one-of neighbors4 with [pcolor = red] ; Verificar se existe lixo nas células vizinhas
+        ifelse lixoProximo != nobody ; Detetou lixo na vizinhança
+        [
+          move-to lixoProximo
+          set pcolor black
+          set lixoTransportado lixoTransportado + 1
+        ]
+        [ ; Se não houver lixo, avançar
+          ifelse [pcolor] of patch-ahead 1 = white
+          [
+            right 90  ; Desvia do obstáculo
+          ]
+          [
+            fd 1  ; Continua em frente
+            set heading (heading + random 90) mod 360 ; Adiciona aleatoriedade ao movimento
+            set energia energia - 1
+          ]
+        ]
       ]
       [
-        fd 1  ; Continua em frente
+        ; Se estiver cheio de lixo -> procurar depósito
+        let locDeposito one-of neighbors4 with [pcolor = green]
+        ifelse locDeposito != nobody
+        [ ; Detetou o depósito na vizinhança
+          move-to locDeposito
+          set depositoLixo depositoLixo + lixoTransportado
+          set lixoTransportado 0
+          set ticksEspera ticksDespejoLixo
+        ]
+        [
+          ifelse [pcolor] of patch-ahead 1 = white
+          [
+            right 90
+          ]
+          [
+            fd 1
+            set heading (heading + random 90) mod 360 ; Adiciona aleatoriedade ao movimento
+            set energia energia - 1
+          ]
+        ]
       ]
     ]
   ]
-end
 
+end
 
 
 @#$#@#$#@
@@ -187,7 +205,7 @@ naspiradores
 naspiradores
 0
 100
-21.0
+1.0
 1
 1
 NIL
@@ -253,7 +271,7 @@ nobstaculos
 nobstaculos
 0
 100
-48.0
+73.0
 1
 1
 NIL
@@ -294,7 +312,7 @@ nlixo
 nlixo
 0
 60
-17.0
+5.0
 1
 1
 %
@@ -309,7 +327,7 @@ capTransporte
 capTransporte
 0
 100
-50.0
+5.0
 1
 1
 NIL
@@ -343,6 +361,21 @@ procuraCarregador
 1
 1
 %
+HORIZONTAL
+
+SLIDER
+209
+10
+381
+43
+ticksDespejoLixo
+ticksDespejoLixo
+0
+100
+87.0
+1
+1
+NIL
 HORIZONTAL
 
 @#$#@#$#@

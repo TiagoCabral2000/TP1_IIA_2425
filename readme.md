@@ -27,21 +27,26 @@ DEPOSITO DO LIXO:
 - Nº de agentes definido pelo utilizador ✅
 - Energia inicial dos agentes definida pelo utilizador ✅
 - Capacidade de carga máxima de lixo dos agentes definida pelo utilizador ✅
-- Número de ticks para despejar a totalidade do lixo no depósito ❌
+- Número de ticks para despejar a totalidade do lixo no depósito ✅
 - Número de ticks para carregar o agente ❌
 
 ### Funcionalidades
 - Agente pode recolher lixo APENAS quando passa em cima dele (_Ficha2 - Parte 2 - passo i_) -> quantidade de elementos de lixo que transporta é incrementada. SE quantidade de lixo que transporta for = à capacidade maxima de transportar lixo, deixa de o poder apanhar. Ao apanhar, mudar a cor da patch de vermelho para preto ✅
 - Se houver vários elementos de lixo na vizinhança do agente, este transporta um ao acaso (_Ficha2 - Parte 1 - Ex2 passo a_) ✅
-- Quando o agente atingir a capacidade máxima de transporte de lixo, procura depósito do lixo. Quando chega ao depósito, deposita a totalidade do lixo (_Ficha3 - Passo 6_). A operação de despejo de lixo deverá demorar um determinado número de iterações, ou ticks (configurável pelo utilizador) ❌
-- Por cada célula que o agente se move perde 1 de energia  (_Ficha3 - Passo 4_) ❌
+- Quando o agente atingir a capacidade máxima de transporte de lixo, procura depósito do lixo. Quando chega ao depósito, deposita a totalidade do lixo (_Ficha3 - Passo 6_). A operação de despejo de lixo deverá demorar um determinado número de iterações, ou ticks (configurável pelo utilizador) ✅
+- Por cada célula que o agente se move perde 1 de energia  (_Ficha3 - Passo 4_) ✅
 - Quando a energia do agente atingir o valor mínimo de energia definida pelo utilizador, o agente muda de cor e procura carregador, ignorando o lixo. Memoriza a localização do carregador para lá voltar (_Ficha 3 - passo 7_). Demora um determinado número de iterações, ou ticks (configurável pelo utilizador), para carregar totalmente ❌
 - Quando dois agentes se encontram na vizinhança podem trocar informação da posição do carregador, caso a tenha ❌
 - Se a energia do agente chegar a 0, este morre e pinta a patch de branco ❌
+- Agente não pode sair dos limites do ambiente ❌
 
 
 ### NOTAS
-Neste momento, os aspiradores movem-se aleatoriamente pelo espaço, já evitam os obstaculos e tambem apanham o lixo da vizinhanca
-Quando atinguem a sua capacidade maxima, ainda nao têm comportamento definido de acordo com o enunciado. Continuam a mexer-se até encontrarem um elemento de lixo. Quando encontram esse elemento não sabem o que fazer e ficam parados :)
+Neste momento, os aspiradores movem-se aleatoriamente pelo espaço, já evitam os obstaculos e tambem apanham o lixo da vizinhanca</br>
+Quando atinguem a sua capacidade maxima, ja vao ate ao deposito e despejam o lixo. O tempo deste processo tb ja esta de acordo com o enunciado - tempo definido pelo utilizador</br>
+Por cada movimento, os agentes ja perdem 1 de energia, mas ainda nada esta implementado nesse sentido. Falta fazer die para quando a energia chega a 0 e todo o processo de carregamento (incluindo memoria da localizacao do carregador - penso que a questao de procurar o carregador e ficar la um determinado tempo a carregar é igual ao procurar o deposito do lixo)
+
+### PROBLEMAS IDENTIFICADOS
+Os agentes saem do ambiente de jogo e voltam a spawnar do outro lado. Pedi ajuda ao chatgpt, deu-me uma solução mas continuava a dar mal, não percebe nada de netlogo o.O
 
 

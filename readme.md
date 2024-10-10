@@ -49,4 +49,15 @@ Por cada movimento, os agentes ja perdem 1 de energia, mas ainda nada esta imple
 ### PROBLEMAS IDENTIFICADOS
 Os agentes saem do ambiente de jogo e voltam a spawnar do outro lado. Pedi ajuda ao chatgpt, deu-me uma solução mas continuava a dar mal, não percebe nada de netlogo o.O
 
+## OPÇÕES PARA O MODELO MELHORADO
+- Reprodução de aspiradores (Ficha 3 - Passo 9) -> (_Sugerido no enunciado_)
+- Definição de uma estratégia de limpeza (com aspiradores a serem posicio-nados em posições específicas e a operarem de forma idêntica – uma espécie de mimetismo controlado) -> (_Sugerido no enunciado_)
+- Melhorar o agente aspirador, de forma que monitorize o nível de energia, regressando à base mais próxima (memorizada), assim que deteta que ape-nas tem energia para efetuar o trajeto de regresso -> (_Sugerido no enunciado_)
+- Introdução de falhas na perceção dos aspiradores (aparecimento de um gato – o inimigo – que viaja sobre o aspirador e tapa alguns dos seus sensores -> (_Sugerido no enunciado_)
+- Destrutor de obstáculos (ia melhorar o tempo para aspirar tudo)
+- Boosters de energia (em vez de perder tempo a carregar, sempre que um aspirador passasse numa célula com este booster era carregado imediatamente)
+- Teletransporte para o deposito do lixo após saber a sua localização
+
+
+
 

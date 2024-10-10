@@ -31,7 +31,7 @@ DEPOSITO DO LIXO:
 - Número de ticks para carregar o agente ❌
 
 ### Funcionalidades
-- Agente pode recolher lixo APENAS quando passa em cima dele (_Ficha2 - Parte 2 - passo i_) -> quantidade de elementos de lixo que transporta é incrementada. SE quantidade de lixo que transporta for = à capacidade maxima de transportar lixo, deixa de o poder apanhar. Ao apanhar, mudar a cor da patch de vermelho para preto ✅
+- Agente pode recolher lixo APENAS quando passa em cima dele -> quantidade de elementos de lixo que transporta é incrementada. SE quantidade de lixo que transporta for = à capacidade maxima de transportar lixo, deixa de o poder apanhar. Ao apanhar, mudar a cor da patch de vermelho para preto ✅
 - Se houver vários elementos de lixo na vizinhança do agente, este transporta um ao acaso (_Ficha2 - Parte 1 - Ex2 passo a_) ✅
 - Quando o agente atingir a capacidade máxima de transporte de lixo, procura depósito do lixo. Quando chega ao depósito, deposita a totalidade do lixo (_Ficha3 - Passo 6_). A operação de despejo de lixo deverá demorar um determinado número de iterações, ou ticks (configurável pelo utilizador) ✅
 - Por cada célula que o agente se move perde 1 de energia  (_Ficha3 - Passo 4_) ✅

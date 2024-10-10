@@ -42,9 +42,9 @@ DEPOSITO DO LIXO:
 
 
 ### NOTAS
-Neste momento, os aspiradores movem-se aleatoriamente pelo espaço, já evitam os obstaculos e tambem apanham o lixo da vizinhanca</br>
-Quando atinguem a sua capacidade maxima, ja vao ate ao deposito e despejam o lixo. O tempo deste processo tb ja esta de acordo com o enunciado - tempo definido pelo utilizador</br>
-Por cada movimento, os agentes ja perdem 1 de energia, mas ainda nada esta implementado nesse sentido. Falta fazer die para quando a energia chega a 0 e todo o processo de carregamento (incluindo memoria da localizacao do carregador - penso que a questao de procurar o carregador e ficar la um determinado tempo a carregar é igual ao procurar o deposito do lixo)
+Neste momento, os aspiradores movem-se aleatoriamente pelo espaço, já evitam os obstáculos e também apanham o lixo aleatoriamente da vizinhanca</br>
+Quando atinguem a sua capacidade maxima, já procuram o depósito (apesar de demorarem bué às vezes xD) e despejam o lixo. O tempo deste processo tb ja esta de acordo com o enunciado - tempo definido pelo utilizador</br>
+Por cada movimento, os agentes ja perdem 1 de energia, mas ainda nada esta implementado nesse sentido. Falta fazer 'die' para quando a energia chega a 0 e todo o processo de carregamento (incluindo memória da localização do carregador - penso que a questao de procurar o carregador e ficar lá um determinado tempo a carregar é igual ao procurar o depósito do lixo)
 
 ### PROBLEMAS IDENTIFICADOS
 Os agentes saem do ambiente de jogo e voltam a spawnar do outro lado. Pedi ajuda ao chatgpt, deu-me uma solução mas continuava a dar mal, não percebe nada de netlogo o.O

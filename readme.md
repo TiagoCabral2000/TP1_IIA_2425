@@ -49,6 +49,9 @@ Por cada movimento, os agentes ja perdem 1 de energia, mas ainda nada esta imple
 ### PROBLEMAS IDENTIFICADOS
 Os agentes saem do ambiente de jogo e voltam a spawnar do outro lado. Pedi ajuda ao chatgpt, deu-me uma solução mas continuava a dar mal, não percebe nada de netlogo o.O
 
+</br>
+</br>
+
 ## OPÇÕES PARA O MODELO MELHORADO
 - Reprodução de aspiradores (Ficha 3 - Passo 9) -> (_Sugerido no enunciado_)
 - Definição de uma estratégia de limpeza (com aspiradores a serem posicio-nados em posições específicas e a operarem de forma idêntica – uma espécie de mimetismo controlado) -> (_Sugerido no enunciado_)

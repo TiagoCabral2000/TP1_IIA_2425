@@ -1,7 +1,7 @@
 breed[aspiradores aspirador]
 
 globals [depositoLixo]
-aspiradores-own[energia lixoTransportado]
+turtles-own[energia lixoTransportado]
 
 to setup
   reset-ticks
@@ -64,19 +64,9 @@ to setup-turtles
     set shape "face happy"
     set color grey
     setxy random-xcor random-ycor
-    while [ [pcolor] of patch-here = red]
-      [setxy random-xcor random-ycor]
   ]
 
 end
-
-
-to Moveaspiradores
-  ask aspiradores[
-
-  ]
-end
-
 
 to go
   Moveaspiradores
@@ -85,18 +75,46 @@ to go
   tick
 end
 
+;Percecoes - neighbors4
+;Se a celula a sua frente for branca, contornar
+;Se for vermelho, recolher lixo (pintar patch de preto e incrementar lixo transportado
+to Moveaspiradores
+   ask aspiradores [
+
+    if (xcor >= max-pxcor or xcor <= min-pxcor or ycor >= max-pycor or ycor <= min-pycor) [
+      set heading heading + 180 + random 90 - random 90  ; Muda a direção de 180 graus com variação de até 90 graus
+      ;Sem a variacao dos 90 graus havia bastantes casos em que os apiradores ficavam "presos" nas paredes, isto é, batiam na parede -> voltavam para tras -> voltavam a ir na direcao da parede
+
+      ; Corrigir a posição para evitar que o agente saia do mundo
+      if xcor >= max-pxcor [ set xcor max-pxcor - 0.5 ]
+      if xcor <= min-pxcor [ set xcor min-pxcor + 0.5 ]
+      if ycor >= max-pycor [ set ycor max-pycor - 0.5 ]
+      if ycor <= min-pycor [ set ycor min-pycor + 0.5 ]
+    ]
 
 
-
-
-;;Passo 4
-to ChangeArmadilhas
-  ask patches with [pcolor = red][
-    ask one-of patches with [not any? turtles-here and pcolor != red and pcolor != blue and pcolor != yellow]
-       [set pcolor red]
-    set pcolor black
+    let lixoProximo one-of neighbors4 with [pcolor = red] ; Verificar se existe lixo nas células vizinhas (percepção neighbors4)
+    ifelse lixoProximo != nobody ;Detetou lixo na vizinhança
+    [
+      if lixoTransportado < capTransporte [
+        move-to lixoProximo
+        set pcolor black
+        set lixoTransportado lixoTransportado + 1
+      ]
+    ]
+    [ ;Se nao houver lixo, avancar
+      ifelse [pcolor] of patch-ahead 1 = white
+      [
+        right 90  ; Desvia do obstáculo
+      ]
+      [
+        fd 1  ; Continua em frente
+      ]
+    ]
   ]
 end
+
+
 
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -169,7 +187,7 @@ naspiradores
 naspiradores
 0
 100
-4.0
+21.0
 1
 1
 NIL

@@ -40,3 +40,8 @@ DEPOSITO DO LIXO:
 - Se a energia do agente chegar a 0, este morre e pinta a patch de branco ❌
 
 
+### NOTAS
+Neste momento, os aspiradores movem-se aleatoriamente pelo espaço, já evitam os obstaculos e tambem apanham o lixo da vizinhanca
+Quando atinguem a sua capacidade maxima, ainda nao têm comportamento definido de acordo com o enunciado. Continuam a mexer-se até encontrarem um elemento de lixo. Quando encontram esse elemento não sabem o que fazer e ficam parados :)
+
+

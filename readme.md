@@ -47,6 +47,8 @@ l.Garantir a limpeza completa do ambiente (deixarem de existir representações 
 
 
 ### NOTAS
+O código foi reestruturado, estando agora separado por "blocos" de funções. [Este esquema, feito no canva, permitiu auxiliar a manunteção e alteração do código](https://www.canva.com/design/DAGFIWuWHxU/qPvDbnDFWYdDC-PpufxLcQ/view?utm_content=DAGFIWuWHxU&utm_campaign=designshare&utm_medium=link&utm_source=editor).
+
 Modelo base parece-me estar totalmente implementado.
 
 ### PROBLEMAS IDENTIFICADOS

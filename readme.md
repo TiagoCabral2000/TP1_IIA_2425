@@ -1,7 +1,7 @@
 # <div align="center">Trabalho Prático 1 de Introdução à Inteligência Artificial </div>  
 
 ## OBJETIVO DO TRABALHO
-l.Garantir a limpeza completa do ambiente (deixarem de existir representações de lixo no espaço), no menor tempo possíve
+Garantir a limpeza completa do ambiente (deixarem de existir representações de lixo no espaço), no menor tempo possível
 
 </br>
 
@@ -49,23 +49,15 @@ l.Garantir a limpeza completa do ambiente (deixarem de existir representações 
 ### NOTAS
 O código foi reestruturado, estando agora separado por "blocos" de funções. [Este esquema, feito no canva, permitiu auxiliar a manunteção e alteração do código](https://www.canva.com/design/DAGFIWuWHxU/qPvDbnDFWYdDC-PpufxLcQ/view?utm_content=DAGFIWuWHxU&utm_campaign=designshare&utm_medium=link&utm_source=editor).
 
-Modelo base parece-me estar totalmente implementado.
 
-### PROBLEMAS IDENTIFICADOS
-A movimentação dos agentes, por ter sido programada para ser aleatória, não está muito otimizada, o que pode levar à dificuldade de estes sobreviverem.
-Um agente só regista uma base quando está à procura: poderia, enquanto faz outra tarefa qualquer, na eventualidade de encontrar uma base, registá-la.
-Por vezes, como os agentes conhecem uma base, param de armazenar localizações de novas bases que encontram; essas podem estar mais próximas de si do que a primeira, e nesse caso eria mais vantajoso irem até elas.
-</br>
-</br>
 
-## OPÇÕES PARA O MODELO MELHORADO
-- Reprodução de aspiradores (Ficha 3 - Passo 9) -> (_Sugerido no enunciado_)
-- Definição de uma estratégia de limpeza (com aspiradores a serem posicio-nados em posições específicas e a operarem de forma idêntica – uma espécie de mimetismo controlado) -> (_Sugerido no enunciado_)
-- Melhorar o agente aspirador, de forma que monitorize o nível de energia, regressando à base mais próxima (memorizada), assim que deteta que ape-nas tem energia para efetuar o trajeto de regresso -> (_Sugerido no enunciado_)
-- Introdução de falhas na perceção dos aspiradores (aparecimento de um gato – o inimigo – que viaja sobre o aspirador e tapa alguns dos seus sensores -> (_Sugerido no enunciado_)
-- Destrutor de obstáculos (ia melhorar o tempo para aspirar tudo)
-- Boosters de energia (em vez de perder tempo a carregar, sempre que um aspirador passasse numa célula com este booster era carregado imediatamente)
-- Teletransporte para o deposito do lixo após saber a sua localização
+## MODELO MELHORADO
+- Reprodução de aspiradores ✅
+- Definição de uma estratégia de limpeza (distribuição dos aspiradores por quadrantes) ✅
+- Melhorar o agente aspirador, de forma que monitorize o nível de energia, regressando à base mais próxima (memorizada), assim que deteta que apenas tem energia para efetuar o trajeto de regresso ✅
+- Aspiradores de obstáculos ✅
+- Movimento otimizado dos aspiradores ✅
+
 
 
 
